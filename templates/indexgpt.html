@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão do Tempo</title>
+
+    <!-- CSS SEM ERRO -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>🌦️ Previsão de Tempo</h1>
+        <p>Confira o clima na sua região</p>
+    </header>
+
+    <!-- BUSCA -->
+    <form method="POST" class="search-section">
+        <input
+            type="text"
+            name="cidade"
+            placeholder="Digite o nome da cidade..."
+            class="search-input"
+            required
+        >
+        <button type="submit" class="search-btn">Buscar</button>
+    </form>
+
+    <!-- CLIMA ATUAL -->
+    {% if atual %}
+    <section class="current-weather">
+        <div class="weather-card main-card">
+
+            <div class="city-info">
+                <h2>{{ atual.cidade }}</h2>
+            </div>
+
+            <div class="weather-details">
+                <div class="temperature">
+                    <span class="temp-value">
+                        {{ atual.temperatura }}°C
+                    </span>
+
+                    <img
+                        src="{{ atual.icone }}"
+                        alt="Ícone do tempo"
+                    >
+                </div>
+
+                <div class="weather-description">
+                    <p>{{ atual.descricao }}</p>
+                    <p>Umidade: {{ atual.umidade }}%</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- PREVISÃO -->
+    {% if previsao %}
+    <section class="forecast-section">
+        <h3 class="forecast-title">Previsão para os Próximos Dias</h3>
+
+        <div class="forecast-container">
+            {% for dia in previsao %}
+            <div class="forecast-card">
+                <p class="day">{{ dia.dia_semana }}</p>
+
+                <img
+                    src="{{ dia.icone }}"
+                    alt="Ícone do tempo"
+                >
+
+                <p class="temp">
+                    {{ dia.temperatura_media }}°C
+                </p>
+
+                <p class="condition">{{ dia.condicao }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
