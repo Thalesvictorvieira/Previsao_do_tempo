@@ -45,6 +45,9 @@ weather-app/
 │
 └── templates/
     └── index.html
+---
+```
+
 🔑 Configuração da API (IMPORTANTE)
 
 Este projeto não inclui a chave da API por motivos de segurança.
