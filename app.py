@@ -51,7 +51,7 @@ def index():
         atual, previsao = previsao_do_tempo(cidade)
 
     return render_template(
-        "indexgpt.html",
+        "index.html",
         atual=atual,
         previsao=previsao
     )
