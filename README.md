@@ -1,6 +1,6 @@
 # 🌦️ Weather Web App – Flask
 
-Aplicação web desenvolvida em **Python + Flask** que exibe informações climáticas em tempo real utilizando a **API do OpenWeather**.
+Aplicação web desenvolvida em **Python + Flask** que exibe informações climáticas em tempo real utilizando a API do www.weatherapi.com.
 
 Este projeto foi criado com foco em aprendizado prático de:
 - Consumo de APIs externas
@@ -27,7 +27,7 @@ Este projeto foi criado com foco em aprendizado prático de:
 - **Flask**
 - **HTML5**
 - **CSS3**
-- **API OpenWeather**
+- **API weatherapi**
 
 ---
 
@@ -55,7 +55,7 @@ Este projeto não inclui a chave da API por motivos de segurança.
 Passo a passo:
 
 Acesse o site oficial:
-👉 https://openweathermap.org/api
+👉 www.weatherapi.com
 
 Crie uma conta gratuita
 
